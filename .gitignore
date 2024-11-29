@@ -1,0 +1,6 @@
+# Ignore environment files (see why in SECURITY_EXPLANATION.txt)
+.env
+ 
+# Ignore SSH keys
+id_ssh
+ 
