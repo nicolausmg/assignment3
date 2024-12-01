@@ -2,5 +2,6 @@
 .env
  
 # Ignore SSH keys
-id_ssh
+id_ssh_key
+
  
