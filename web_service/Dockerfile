@@ -8,9 +8,9 @@ RUN chmod 600 /root/.ssh/id_rsa
 RUN touch /root/.ssh/known_hosts
 RUN ssh-keyscan -H github.com >> /root/.ssh/known_hosts
  
-RUN git clone git@github.com:nicolausmg/assignment3.git /app
+RUN git clone git@github.com:nicolausmg/assignment3.git /web_service
  
-WORKDIR /app
+WORKDIR /web_service
  
 RUN pip install flask
 
