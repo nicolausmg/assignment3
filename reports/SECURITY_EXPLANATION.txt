@@ -1,0 +1,10 @@
+
+SECURITY EXPLANATION
+
+There are two key things in this project that should be kept out of GitHub, that is, hidden from the rest of users: the.env file and the ssh keys. 
+
+When working on software projects like this, one of the most important security practices is managing sensitive information, such as environment variables, correctly. Our.env file stores things like database database password. These need to be in a.gitignore file, so that they do not accidentally get added into GitHub. This is where ignoring files come into play to prevent sensitive information from being uploaded into public repositories where it may be used by other users accessing our repository.
+
+Also, hardcoding credentials, especially sensitive ones like SSH keys, can pose a huge security risk. If someone accessed our private SSH key, they could impersonate us, access our servers, or even modify our projects. Therefore, we always have to make sure that we don't hardcode or share our SSH keys in the code.
+
+Yet another layer of security we introduced was the creation of our own Docker network, called software_dev. By using our own network, we are in control of what containers can and cannot reach and who gets access to which services within that network. In turn, this prevents unauthorized access either from the outside or by other containers running on the same host.

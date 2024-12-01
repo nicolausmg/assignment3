@@ -1,0 +1,9 @@
+
+NETWORK EXPLANATION
+
+For the subnet, we have chosen 10.10.0.0/16 for our Docker network, software_dev; this will reserve a large number of IP addresses that can potentially be used on the network. We selected static IP addresses from this range to make locating both the web and database services easier. We assigned the web service to 10.10.50.10 and the database service to 10.10.50.20. These addresses help ensure the services are always reachable without having to guess or search for their locations.
+
+If the subnet for the Docker network overlaps with another network already in use on the host system, it could create some serious problems. When two networks share the same range of IP addresses, it can confuse the system about where to send information. This could cause communications failures, making containers unable to talk to other external systems or even to each other. That's why it's very important to choose a Docker subnet that is distinct and that won't conflict with ones that already exist on our computer.
+
+One of the many useful features of Docker is a DNS-like system for naming and discovery of containers. Every service in the Docker network can be reached by simply using its name. For example, the web service can connect to the database simply by referring to it as "database" rather than having to use its precise IP address. Docker does all the work in the background of linking these names to the correct IPs, so as services restart or scale, we don't have to worry about updating addresses. This feature allows for easier setup and management of networks.
+
