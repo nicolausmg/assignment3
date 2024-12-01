@@ -17,6 +17,8 @@ services:
       - POSTGRES_DB=${DB_NAME}
     ports:
       - "${DB_PORT}:${DB_PORT}"
+    volumes:
+      - db_data:/var/lib/postgresql/data
     networks:
       software_dev:
         ipv4_address: 10.10.50.20
@@ -28,3 +30,5 @@ networks:
       config:
         - subnet: 10.10.0.0/16
 
+volumes:
+  db_data:
