@@ -12,6 +12,8 @@ RUN git clone git@github.com:nicolausmg/assignment3.git /app
 
 WORKDIR /app
 
+COPY . /app
+
 RUN pip install flask
 
 CMD ["python", "web.py"]
